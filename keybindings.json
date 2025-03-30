@@ -1,0 +1,127 @@
+[
+	{
+		"key": "space",
+		"command": "vspacecode.space",
+		"when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+	},
+	{
+		"key": "space",
+		"command": "vspacecode.space",
+		"when": "sideBarFocus && !inputFocus && !whichkeyActive"
+	},
+	{
+		"key": "tab",
+		"command": "extension.vim_tab",
+		"when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
+	},
+	{
+		"key": "tab",
+		"command": "-extension.vim_tab",
+		"when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+	},
+	{
+		"key": "x",
+		"command": "magit.discard-at-point",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "k",
+		"command": "-magit.discard-at-point"
+	},
+	{
+		"key": "-",
+		"command": "magit.reverse-at-point",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "v",
+		"command": "-magit.reverse-at-point"
+	},
+	{
+		"key": "shift+-",
+		"command": "magit.reverting",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "shift+v",
+		"command": "-magit.reverting"
+	},
+	{
+		"key": "shift+o",
+		"command": "magit.resetting",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "shift+x",
+		"command": "-magit.resetting"
+	},
+	{
+		"key": "x",
+		"command": "-magit.reset-mixed"
+	},
+	{
+		"key": "ctrl+u x",
+		"command": "-magit.reset-hard"
+	},
+	{
+		"key": "y",
+		"command": "-magit.show-refs"
+	},
+	{
+		"key": "y",
+		"command": "vspacecode.showMagitRefMenu",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode == 'Normal'"
+	},
+	{
+		"key": "g",
+		"command": "-magit.refresh",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+	{
+		"key": "g",
+		"command": "vspacecode.showMagitRefreshMenu",
+		"when": "editorTextFocus && editorLangId == 'magit' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+	},
+
+	// NAVIGATION
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "workbench.action.terminal.kill",
+		"when": "terminalFocus"
+	},
+  // FILE TREE
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+]

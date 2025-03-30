@@ -1,0 +1,137 @@
+.UrlBar-AddressField.urlfield-anchor.button-textonly.below{
+    max-width: 300px;
+    flex: 1;
+    margin: 0 auto;
+    border: none!important;
+    outline: none!important;
+    background-color: transparent!important;
+
+}
+
+/* #urlFieldInput{
+    border: none!important;
+    background-color: transparent!important;
+} */
+
+.toolbar-extensions{
+    position: absolute;
+    right: 170px;
+    top: 0;
+    overflow: hidden;
+    line-height: initial;
+}
+
+#browser.win.address-top .toolbar:has(.window-buttongroup.on-mainbar) {
+    padding-right:0;
+
+}
+
+.toolbar-spacer-panel{
+    display:none;
+}
+
+.ToolbarButton-Button{
+    display:none;
+}
+
+#main > div.mainbar > div > div > div.UrlBar-AddressField.urlfield-anchor.button-textonly.below > div:nth-child(1) > div{
+    display:none;
+    
+}
+
+button.ToolbarButton-Button[title="Bookmark Page"]{
+    display:none;
+}
+
+button.ToolbarButton-Button[title="Translate Page"]{
+    display:none;
+}
+
+button[title="Open a New Tab"]{
+    display:none;
+}
+
+
+.tab-position .tab .title {
+    font-size: .9rem;
+}
+
+.tab-strip .separator{
+    display: none;
+}
+
+
+/* div.tab-position.is-pinned { */
+div.tab-position{
+    --Height: 50px !important;
+    transform: translateX(var(--PositionX)) translateY(calc(var(--PositionY) * 1.4)) !important;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+div.button-toolbar.newtab {
+    top: calc(var(--PositionY) * 1.4) !important;
+}
+
+div.tab-position .tab {
+    justify-content: space-around !important;
+}
+
+span.favicon.jstest-favicon-image {
+    margin-right: 4px;
+}
+
+.tab {
+    border-radius: var(--currentRadius);
+    border: 1px solid transparent;
+}
+
+.tab .pinned{
+    background-color: red;
+}
+
+.tab:hover{
+    border-color: var(--colorAccentBg);
+}
+
+.tab .tab-header{
+    padding-left: 12px;
+
+}
+.tab.active.button-off{
+    width: 99%;
+}
+.density-on .tab-wrapper{
+    width: 99%;
+    margin:0;
+}
+
+.tab.active .favicon {
+    filter: none !important;
+}
+
+/* Increase tab height */
+/* Alternative -> UI Zoom on Vivaldi settings */
+/* .tab-strip > span {
+  display: flex;
+  margin-bottom: 12px !important;
+}
+
+.tab-position {
+  height: 40px !important;
+}
+
+.tab-position .tab .title {
+  padding-top: 6px;
+}
+
+.tab-position .tab .tab-header .favicon {
+  padding-top: 3px !important;
+  -webkit-transform:scale(1) !important;
+}
+
+/* Gap between favicon and text */
+/* span.favicon.jstest-favicon-image {
+  margin-right: 4px; Adjust this value to increase or decrease the gap
+} */ 
+

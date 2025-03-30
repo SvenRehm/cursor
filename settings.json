@@ -1,0 +1,121 @@
+{
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 50,
+    "vim.highlightedyank.color": "rgba(241, 48, 48, 1)",
+    "vim.highlightedyank.textColor": "white",
+    "vim.leader": "<Space>",
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-s>": false,
+        "<C-w>": false,
+        "<C-p>": false,
+        "<C-b>": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "Tab"
+            ],
+            "commands": [
+                "editor.action.acceptCursorTabSuggestion"
+            ],
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
+         {
+            "before": [
+                "leader",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
+        },
+        {
+        "before": [
+            "<Esc>"
+        ],
+        "commands": [
+            ":nohl"
+        ],
+    }
+
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                {
+                    "command": "whichkey.triggerKey",
+                    "args": "m"
+                }
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ],
+            "when": "editorTextFocus && !editorReadonly"
+        },
+    ],
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showTabs": "single",
+    "workbench.colorTheme": "monochrome",
+    "editor.matchBrackets": "near"
+
+
+}

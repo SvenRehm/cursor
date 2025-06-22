@@ -1,4 +1,5 @@
 {
+    // VIM START
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 50,
     "vim.highlightedyank.color": "rgba(241, 48, 48, 1)",
@@ -17,6 +18,30 @@
         "<C-b>": false
     },
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "g",
+            ],
+            "commands": [
+                {
+                    "command": "periscope.search",
+                    "when": "editorTextFocus"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+            ],
+            "commands": [
+                {
+                    "command": "periscope.searchCurrentFile",
+                    "when": "editorTextFocus"
+                }
+            ]
+        },
         {
             "before": [
                 "Tab"
@@ -45,7 +70,7 @@
                 }
             ]
         },
-         {
+        {
             "before": [
                 "leader",
                 "/"
@@ -55,14 +80,40 @@
             ]
         },
         {
-        "before": [
-            "<Esc>"
-        ],
-        "commands": [
-            ":nohl"
-        ],
-    }
-
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<space>"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "s",
+        //         "g"
+        //     ],
+        //     "commands": [
+        //         "workbench.action.findInFiles"
+        //     ]
+        // }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -112,10 +163,93 @@
             "when": "editorTextFocus && !editorReadonly"
         },
     ],
+    // VIM END
+    // WORKBENCH START
     "workbench.sideBar.location": "right",
     "workbench.editor.showTabs": "single",
-    "workbench.colorTheme": "monochrome",
-    "editor.matchBrackets": "near"
-
-
+    "workbench.colorTheme": "Vesper",
+    "workbench.colorCustomizations": {
+        "[Vesper]": {
+            "sideBar.border": "#4d4d4d",
+            // "editor.compositionBorder": "#4d4d4d",
+            // "panel.border": "#4d4d4d", // Border for the panel (bottom area, often where chat appears)
+            // "editorGroup.border": "#4d4d4d", // Border between editor groups
+            // "activityBar.border": "#4d4d4d"
+            "scrollbar.shadow": "#ffffff00",
+            "widget.shadow": "#ffffff00"
+        }
+        // "statusBar.background": "#000000",
+        // "statusBar.noFolderBackground": "#000000"
+    },
+    "workbench.editor.labelFormat": "long",
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "workbench.iconTheme": "material-icon-theme",
+    // WORKBENCH END
+    // ======================================================
+    //    BEGIN -- SETTINGS TO HIDE TITLEBAR
+    //  this uses the subframe7536.custom-ui-style extension to load custom css
+    "window.menuBarVisibility": "hidden",
+    "window.customTitleBarVisibility": "auto",
+    "window.titleBarStyle": "native",
+    // "custom-ui-style.electron": {
+    //     "frame": false,
+    //     "titleBarStyle": "hiddenInset"
+    // },
+    // "custom-ui-style.stylesheet": {
+    //     ".container > .title": {
+    //         "display": "none !important;"
+    //     }
+    // },
+    // ======================================================
+    // (END) SETTINGS TO HIDE WINDOW TITLEBAR ====
+    // ====
+    "window.title": "${dirty}${activeEditorLong}",
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.findInFiles"
+    ],
+    // EDITOR START
+    "window.zoomLevel": 1.5,
+    "extensions.ignoreRecommendations": true,
+    "breadcrumbs.enabled": false,
+    "editor.formatOnSave": true,
+    "material-icon-theme.hidesExplorerArrows": true,
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tips.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderLineHighlight": "none",
+    "editor.matchBrackets": "never",
+    "editor.lightbulb.enabled": "off",
+    "editor.hover.enabled": true,
+    "editor.showFoldingControls": "never",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.overviewRulerBorder": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.fontSize": 14,
+    "editor.fontLigatures": false,
+    "editor.lineHeight": 1.7,
+    // EDITOR END
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "explorer.compactFolders": false,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.lineHeight": 1.5,
+    "terminal.integrated.fontSize": 14,
+    "apc.sidebar.titlebar": {
+        "height": 10,
+        "fontSize": 10
+    },
+    // lsp
+    "svelte.enable-ts-plugin": true,
+    "svelte.plugin.svelte.runesLegacyModeCodeLens.enable": false,
+    "workbench.activityBar.location": "hidden",
+    "git.confirmSync": false,
+    "tailwindCSS.colorDecorators": false,
 }

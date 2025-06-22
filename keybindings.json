@@ -1,4 +1,5 @@
 [
+	// NAVIGATION
 	{
 		"key": "alt+left",
 		"command": "workbench.action.focusActiveEditorGroup",
@@ -7,14 +8,8 @@
 	{
 		"key": "alt+right",
 		"command": "workbench.action.findInFiles",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+right",
-		"command": "workbench.action.findInFiles",
 		"when": "terminalFocus"
 	},
-	// NAVIGATION
 	{
 		"key": "ctrl+up",
 		"command": "search.action.focusPreviousSearchResult",
@@ -26,13 +21,14 @@
 		"when": "searchViewletVisible"
 	},
 	{
-		"key": "ctrl+n",
-		"command": "workbench.action.togglePanel"
-	},
-	{
 		"key": "alt+up",
 		"command": "workbench.action.focusActiveEditorGroup",
 		"when": "terminalFocus"
+	},
+	{
+		"key": "alt+right",
+		"command": "workbench.action.findInFiles",
+		"when": "editorFocus"
 	},
 	{
 		"key": "alt+down",
@@ -77,5 +73,9 @@
 	{
 		"key": "ctrl+i",
 		"command": "composerMode.agent"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "workbench.action.togglePanel"
 	},
 ]

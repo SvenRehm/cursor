@@ -1,81 +1,105 @@
+// Place your key bindings in this file to override the defaults
 [
-	// NAVIGATION
-	{
-		"key": "alt+left",
-		"command": "workbench.action.focusActiveEditorGroup",
-		"when": "searchViewletFocus"
-	},
-	{
-		"key": "alt+right",
-		"command": "workbench.action.findInFiles",
-		"when": "terminalFocus"
-	},
-	{
-		"key": "ctrl+up",
-		"command": "search.action.focusPreviousSearchResult",
-		"when": "searchViewletVisible"
-	},
-	{
-		"key": "ctrl+down",
-		"command": "search.action.focusNextSearchResult",
-		"when": "searchViewletVisible"
-	},
-	{
-		"key": "alt+up",
-		"command": "workbench.action.focusActiveEditorGroup",
-		"when": "terminalFocus"
-	},
-	{
-		"key": "alt+right",
-		"command": "workbench.action.findInFiles",
-		"when": "editorFocus"
-	},
-	{
-		"key": "alt+down",
-		"command": "workbench.action.terminal.focus",
-		"when": "editorFocus"
-	},
-	{
-		"key": "ctrl+w",
-		"command": "workbench.action.terminal.kill",
-		"when": "terminalFocus"
-	},
-	// FILE TREE
-	{
-		"command": "workbench.action.toggleSidebarVisibility",
-		"key": "ctrl+e"
-	},
-	{
-		"command": "workbench.files.action.focusFilesExplorer",
-		"key": "ctrl+e",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "n",
-		"command": "explorer.newFile",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
-	{
-		"command": "renameFile",
-		"key": "r",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
-	{
-		"key": "shift+n",
-		"command": "explorer.newFolder",
-		"when": "explorerViewletFocus"
-	},
-	{
-		"command": "deleteFile",
-		"key": "d",
-		"when": "filesExplorerFocus && !inputFocus"
-	},
-	{
-		"key": "ctrl+i",
-		"command": "composerMode.agent"
-	},
-	{
-		"key": "ctrl+n",
-		"command": "workbench.action.togglePanel"
-	},
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "comnand": "terminal.toggleVisibility"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "composerMode.agent"
+  },
+  // NAVIGATION
+  {
+    "key": "alt+left",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "searchViewletFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.findInFiles",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "searchViewletVisible"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "search.action.focusNextSearchResult",
+    "when": "searchViewletVisible"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.findInFiles",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
+  },
+  // FILE TREE
+  {
+    "command": "workbench.action.toggleSidebarVisibility",
+    "key": "ctrl+e"
+  },
+  {
+    "command": "workbench.files.action.focusFilesExplorer",
+    "key": "ctrl+e",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.togglePanel"
+  }
 ]

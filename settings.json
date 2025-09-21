@@ -1,5 +1,5 @@
 {
-    // VIM START
+    //VIM START
     "vim.highlightedyank.enable": true,
     "vim.highlightedyank.duration": 50,
     "vim.highlightedyank.color": "rgba(241, 48, 48, 1)",
@@ -15,9 +15,73 @@
         "<C-s>": false,
         "<C-w>": false,
         "<C-p>": false,
-        "<C-b>": false
+        "<C-b>": false,
+        "<C-k>": false,
     },
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "a"
+            ],
+            "commands": [
+                "vscode-harpoon.addEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "l"
+            ],
+            "commands": [
+                "vscode-harpoon.editEditors"
+            ]
+        },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "p",
+        //     ],
+        //     "commands": [
+        //         "vscode-harpoon.editorQuickPick"
+        //     ]
+        // },
+        {
+            "before": [
+                "<leader>",
+                "n"
+            ],
+            "commands": [
+                "vscode-harpoon.gotoEditor1"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "vscode-harpoon.gotoEditor2"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "i"
+            ],
+            "commands": [
+                "vscode-harpoon.gotoEditor3"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "o"
+            ],
+            "commands": [
+                "vscode-harpoon.gotoEditor4"
+            ]
+        },
         {
             "before": [
                 "s"
@@ -173,10 +237,6 @@
             "when": "editorTextFocus && !editorReadonly"
         },
     ],
-    // VIM END
-    // WORKBENCH START
-    "workbench.sideBar.location": "right",
-    "workbench.editor.showTabs": "single",
     "workbench.colorTheme": "Vesper",
     "workbench.colorCustomizations": {
         "[Vesper]": {
@@ -186,21 +246,18 @@
             // "editorGroup.border": "#4d4d4d", // Border between editor groups
             // "activityBar.border": "#4d4d4d"
             "scrollbar.shadow": "#ffffff00",
-            "widget.shadow": "#ffffff00"
-        }
+            "widget.shadow": "#ffffff00",
+            "statusBar.background": "#000000",
+        },
         // "statusBar.background": "#000000",
+        "statusBar.background": "#000000",
         // "statusBar.noFolderBackground": "#000000"
     },
     "workbench.editor.labelFormat": "long",
     "workbench.editor.editorActionsLocation": "hidden",
     "workbench.layoutControl.enabled": false,
     "workbench.iconTheme": "material-icon-theme",
-    // WORKBENCH END
-    // ======================================================
-    //    BEGIN -- SETTINGS TO HIDE TITLEBAR
-    //  this uses the subframe7536.custom-ui-style extension to load custom css
-    "window.menuBarVisibility": "hidden",
-    "window.customTitleBarVisibility": "auto",
+    "window.customTitleBarVisibility": "never",
     "window.titleBarStyle": "native",
     // "custom-ui-style.electron": {
     //     "frame": false,
@@ -209,7 +266,7 @@
     // "custom-ui-style.stylesheet": {
     //     ".container > .title": {
     //         "display": "none !important;"
-    //     }
+    //     },
     // },
     // ======================================================
     // (END) SETTINGS TO HIDE WINDOW TITLEBAR ====
@@ -236,7 +293,7 @@
     "editor.hover.enabled": true,
     "editor.showFoldingControls": "never",
     "editor.scrollbar.horizontal": "hidden",
-    "editor.scrollbar.vertical": "hidden",
+    // "editor.scrollbar.vertical": "hidden",
     "editor.overviewRulerBorder": false,
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": "on",
@@ -259,7 +316,110 @@
     // lsp
     "svelte.enable-ts-plugin": true,
     "svelte.plugin.svelte.runesLegacyModeCodeLens.enable": false,
-    "workbench.activityBar.location": "hidden",
     "git.confirmSync": false,
     "tailwindCSS.colorDecorators": false,
+    "workbench.navigationControl.enabled": false,
+    "window.commandCenter": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.sideBar.location": "right",
+    "window.controlsStyle": "custom",
+    "workbench.editor.showTabs": "single",
+    // "custom-ui-style.electron": {
+    //     // Frameless window (no title bar, no MacOS traffic light buttons)
+    //     //  - "A frameless window removes all chrome applied by the OS, including window controls"
+    //     //  - https://www.electronjs.org/docs/latest/api/base-window#new-basewindowoptions
+    //     //  - https://www.electronjs.org/docs/latest/tutorial/custom-window-styles#frameless-windows
+    //     //  - https://www.electronjs.org/docs/latest/tutorial/custom-title-bar
+    //     "frame": false,
+    //     // Disable rounded corners (MacOS)
+    //     //  - https://www.electronjs.org/docs/latest/api/base-window#new-basewindowoptions
+    //     //  - "Whether frameless window should have rounded corners on MacOS"
+    //     //  - "Setting this property to false will prevent the window from being fullscreenable"
+    //     "roundedCorners": false,
+    // },
+    // "custom-ui-style.font.sansSerif": "Maple UI, -apple-system",
+    // "custom-ui-style.background.url": "file:///D:/image/ide-bg.jpg",
+    // "custom-ui-style.webview.monospaceSelector": [
+    //     ".codeblock",
+    //     ".prism [class*='language-']"
+    // ],
+    // // Custom stylesheet, support native nest selectors
+    // "custom-ui-style.stylesheet": {
+    //     "kbd, .statusbar": {
+    //         "font-family": "var(--cus-monospace-font)",
+    //     },
+    //     "span:not([class*='dyn-rule'])+span[class*='dyn-rule']": {
+    //         "border-top-left-radius": "3px",
+    //         "border-bottom-left-radius": "3px"
+    //     },
+    //     "span[class*='dyn-rule']:has(+span[class*='dyn-rule']+span:not([class*='dyn-rule']))": {
+    //         "border-top-right-radius": "3px",
+    //         "border-bottom-right-radius": "3px"
+    //     },
+    //     ".cdr": {
+    //         "border-radius": "3px"
+    //     },
+    //     ".monaco-findInput .monaco-inputbox": {
+    //         "width": "calc(100% + 6px)"
+    //     },
+    //     ".monaco-workbench .activitybar .monaco-action-bar": {
+    //         "& .action-label": {
+    //             "font-size": "21px !important",
+    //             "&::before": {
+    //                 "position": "absolute",
+    //                 "z-index": 2
+    //             },
+    //             "&::after": {
+    //                 "content": "''",
+    //                 "width": "75%",
+    //                 "height": "75%",
+    //                 "position": "absolute",
+    //                 "border-radius": "6px",
+    //             },
+    //         },
+    //         "& .action-item:hover .action-label": {
+    //             "color": "var(--vscode-menu-selectionForeground) !important",
+    //             "&::after": {
+    //                 "background-color": "var(--vscode-menu-selectionBackground)",
+    //             }
+    //         },
+    //         "& .active-item-indicator:before": {
+    //             "border": "none !important",
+    //             "width": "3px !important",
+    //             "height": "calc(100% - 12px) !important",
+    //             "top": "6px !important",
+    //             "border-radius": "4px"
+    //         },
+    //         "& .action-item.checked .active-item-indicator:before": {
+    //             "background": "var(--vscode-activityBar-activeBorder)",
+    //         }
+    //     },
+    //     ".basepanel .composite-bar-container .actions-container > .action-item": {
+    //         "height": "24px",
+    //         "padding": "0 8px !important",
+    //         "border-radius": "4px",
+    //         "align-items": "center",
+    //         "justify-content": "center",
+    //         "&.checked": {
+    //             "background": "color-mix(in srgb, var(--vscode-foreground) 12%, transparent)",
+    //         },
+    //         "& .active-item-indicator:before": {
+    //             "content": "none !important"
+    //         }
+    //     },
+    //     ".monaco-text-button": {
+    //         "border-radius": "4px !important",
+    //     },
+    //     ".monaco-button-dropdown": {
+    //         "& > .monaco-button.monaco-text-button": {
+    //             "border-radius": "4px 0 0 4px !important",
+    //         },
+    //         "& > .monaco-button.monaco-dropdown-button": {
+    //             "border-radius": "0 4px 4px 0 !important",
+    //         },
+    //     },
+    //     ".monaco-workbench>.notifications-center": {
+    //         "border-radius": "8px !important"
+    //     },
+    // }
 }

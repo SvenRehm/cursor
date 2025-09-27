@@ -1,0 +1,64 @@
+html {
+  /* Color variables */
+  --color-dark: #1a1a1a;
+  --color-darkest: #0d0d0d;
+  --color-orange: #f18a62;
+  --color-selected-bg: #bcbbbc;
+  --color-orange-hover: #e98f66;
+  --color-inactive-bg: #2a2a2a;
+  --color-mid-gray: #898989;
+
+  /* Radius variables */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* Effect variables */
+  --blur-md: blur(16px);
+  --filter-invert: grayscale(100%) brightness(0);
+  --border-mix-24: color-mix(
+    in srgb,
+    var(--vscode-tab-inactiveForeground) 24%,
+    transparent
+  );
+  --border-mix-42: color-mix(
+    in srgb,
+    var(--vscode-tab-inactiveForeground) 42%,
+    transparent
+  );
+
+  /* Original variables as aliases */
+  --user-dark-color: var(--color-dark);
+  --user-darkest-color: var(--color-darkest);
+  --user-orange: var(--color-orange);
+  --user-selected-background: var(--color-selected-bg);
+  --user-invert-filter: var(--filter-invert);
+  --tabs-border-bottom-color: transparent;
+  --tabs-border-top-color: transparent;
+
+  ::selection {
+    background: var(--color-orange);
+    color: var(--color-darkest);
+  }
+}
+
+.slider {
+  border-radius: 1px !important;
+  position: absolute !important;
+  right: 2px !important;
+  width: 4px !important;
+  background: var(--vscode-tab-inactiveForeground) !important;
+  left: auto !important;
+}
+
+.tabs-and-actions-container.tabs-border-bottom,
+.tabs-border-bottom,
+[role="tab"] {
+  border: unset !important;
+  --tabs-border-bottom-color: unset !important;
+}
+/* .composite.title{
+    opacity: 0 !important; 
+} */
+

@@ -340,4 +340,17 @@
     "vscodevim.vim": 1,
     "asvetliakov.vscode-neovim": 1,
   },
+
+    // always exclude Godot scene files from search results unless explicitly asked for
+  "periscope.rgGlobExcludes": ["**/*.tscn"],
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1,
+  },
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block-outline",
+  "vim.cursorStylePerMode.visual": "block-outline",
+  "vim.cursorStylePerMode.visualblock": "block-outline",
+  "vim.cursorStylePerMode.visualline": "block-outline",
 }

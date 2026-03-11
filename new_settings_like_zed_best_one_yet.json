@@ -19,10 +19,10 @@
     "<C-k>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["/"],
-      "commands": ["actions.find"],
-    },
+    // {
+    //   "before": ["/"],
+    //   "commands": ["actions.find"],
+    // },
     // {
     //   "before": ["<leader>", "s", "g"],
     //   "commands": ["search.action.openEditor"],
@@ -150,10 +150,10 @@
         },
       ],
     },
-    {
-      "before": ["/"],
-      "commands": ["actions.find"],
-    },
+    // {
+    //   "before": ["/"],
+    //   "commands": ["actions.find"],
+    // },
     {
       "before": ["<space>"],
       "commands": ["vspacecode.space"],
@@ -231,7 +231,7 @@
   "workbench.startupEditor": "none",
   "editor.minimap.enabled": false,
   "editor.guides.indentation": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.renderLineHighlight": "none",
   "editor.matchBrackets": "never",
   "editor.lightbulb.enabled": "off",
@@ -279,7 +279,7 @@
   "custom-ui-style.preferRestart": true,
   "custom-ui-style.reloadWithoutPrompting": true,
   "custom-ui-style.external.imports": [
-    // "file://C:/Users/Sven/AppData/Roaming/Code/User/test.css",
+    // "file://C:/Users/Sven/AppDota/Roaming/Code/User/test.css",
     // "file://C:/Users/Sven/AppData/Roaming/Code/User/index.js",
     // "file:///C:/Users/Sven/Documents/index.js",
   ],
@@ -303,58 +303,65 @@
   "window.newWindowDimensions": "maximized",
   // "editor.full": true,
   // C:\Users\Sven\Documents\
-  "periscope.rgQueryParams": [
-    {
-      // filter the results to a folder
-      // Query: "redis -m module1"
-      // After: "rg 'redis' -g '**/*module1*/**'"
-      "regex": "^(.+) -m ([\\w-_]+)$",
-      "param": "-g '**/*$1*/**' -g '!**/node_modules/**'",
-    },
-    {
-      // filter the results to a folder and filetype
-      // Query: "redis -m module1 yaml"
-      // After: "rg 'redis' -g '**/*module1*/**/*.yaml'"
-      "regex": "^(.+) -m ([\\w-_]+) ([\\w]+)$",
-      "param": "-g '**/*$1*/**/*.$2'",
-    },
-    {
-      // filter the results that match a glob
-      // Query: "redis -g *module"
-      // After: "rg 'redis' -g '*module'"
-      "regex": "^(.+) -g (.+)$",
-      "param": "-g '$1'",
-    },
-    {
-      // filter the results to rg filetypes
-      // Query: "redis -t yaml"
-      // After: "rg 'redis' -t yaml"
-      "regex": "^(.+) -t ?(\\w+)$",
-      "param": "-t $2",
-    },
-    {
-      // filter the results to Godot script files (.gd) when query is just "*.gd"
-      // Query: "*.gd"
-      // After: "rg '' -g '**/*.gd'"
-      "regex": "^\\s*\\*\\.gd\\s*$",
-      "param": "-g '**/*.gd'",
-    },
-    {
-      // filter the results to Godot script files (.gd) when query is "<term> *.gd"
-      // Query: "redis *.gd"
-      // After: "rg 'redis' -g '**/*.gd'"
-      "regex": "^(.+?)\\s+\\*\\.gd\\s*$",
-      "param": "-g '**/*.gd'",
-    },
-    {
-      // filter the results that match a file extension through a glob
-      // Query: redis *.rs => rg 'redis' -g '*.rs'
-      "regex": "^(.+?)\\s+\\*\\.(\\w+)\\s*$",
-      "param": "-g '*.$2'",
-    },
-  ],
+  //   "periscope.rgQueryParams": [
+  //     {
+  //       // filter the results to a folder
+  //       // Query: "redis -m module1"
+  //       // After: "rg 'redis' -g '**/*module1*/**'"
+  //       "regex": "^(.+) -m ([\\w-_]+)$",
+  //       "param": "-g '**/*$1*/**' -g '!**/node_modules/**'",
+  //     },
+  //     {
+  //       // filter the results to a folder and filetype
+  //       // Query: "redis -m module1 yaml"
+  //       // After: "rg 'redis' -g '**/*module1*/**/*.yaml'"
+  //       "regex": "^(.+) -m ([\\w-_]+) ([\\w]+)$",
+  //       "param": "-g '**/*$1*/**/*.$2'",
+  //     },
+  //     {
+  //       // filter the results that match a glob
+  //       // Query: "redis -g *module"
+  //       // After: "rg 'redis' -g '*module'"
+  //       "regex": "^(.+) -g (.+)$",
+  //       "param": "-g '$1'",
+  //     },
+  //     {
+  //       // filter the results to rg filetypes
+  //       // Query: "redis -t yaml"
+  //       // After: "rg 'redis' -t yaml"
+  //       "regex": "^(.+) -t ?(\\w+)$",
+  //       "param": "-t $2",
+  //     },
+  //     {
+  //       // filter the results to Godot script files (.gd) when query is just "*.gd"
+  //       // Query: "*.gd"
+  //       // After: "rg '' -g '**/*.gd'"
+  //       "regex": "^\\s*\\*\\.gd\\s*$",
+  //       "param": "-g '**/*.gd'",
+  //     },
+  //     {
+  //       // filter the results to Godot script files (.gd) when query is "<term> *.gd"
+  //       // Query: "redis *.gd"
+  //       // After: "rg 'redis' -g '**/*.gd'"
+  //       "regex": "^(.+?)\\s+\\*\\.gd\\s*$",
+  //       "param": "-g '**/*.gd'",
+  //     },
+  //     {
+  //       // filter the results that match a file extension through a glob
+  //       // Query: redis *.rs => rg 'redis' -g '*.rs'
+  //       "regex": "^(.+?)\\s+\\*\\.(\\w+)\\s*$",
+  //       "param": "-g '*.$2'",
+  //     },
+  //   ],
   // always exclude Godot scene files from search results unless explicitly asked for
-  "periscope.rgGlobExcludes": ["**/*.tscn"],
+  "periscope.rgGlobExcludes": [
+    "**/*.tscn",
+    "**/*.tmp",
+    "**/*.uid",
+    "**/*.godot",
+    "**/*.*.import",
+    "**/*.svg",
+  ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
     "asvetliakov.vscode-neovim": 1,
@@ -407,10 +414,54 @@
   "workbench.tree.indent": 16,
   "windowColors.askToColorizeRepoWhenOpened": false,
   "window.customTitleBarVisibility": "auto",
-  "workbench.colorTheme": "Sequoia Moonlight",
+  "workbench.colorTheme": "Noir Poimandres Darker",
 
   // --- COLOR CUSTOMIZATIONS ---
   "workbench.colorCustomizations": {
+    "[Noir Poimandres Darker]": {
+      "sideBar.border": "#1d2033",
+      "editorGroupHeader.border": "#1d2033",
+      "window.activeBorder": "#1d2033",
+      "contrastBorder": "#1d2033",
+      "titleBar.border": "#1d2033",
+      "terminal.border": "#1d2033",
+
+      //   "input.border": "#1d2033",
+      //   "dropdown.border": "#1d2033",
+      //   "button.border": "#1d2033",
+      //   "editorWidget.border": "#1d2033",
+      //   "editorHoverWidget.border": "#1d2033",
+      //   "editorSuggestWidget.border": "#1d2033",
+      //   "pickerGroup.border": "#1d2033",
+      //   "settings.headerBorder": "#1d2033",
+      //   "settings.sashBorder": "#1d2033",
+      //   "statusBar.border": "#red",
+      //   "activityBar.border": "#red",
+      //   "tab.border": "#red",
+      //   "panel.border": "#red",
+      //   "input.border": "#red",
+      //   "editorGroupHeader.tabsBorder": "#red",
+      //   "tab.border": "#red",
+      //   "widget.border": "#red",
+      //   "activityBar.border": "#red",
+      //   "focusBorder": "#1d2033",
+      //   "activityBar.border": "#1d2033",
+      //   "activityBar.activeBorder": "#1d2033",
+      //   "activityBar.activeFocusBorder": "#1d2033",
+      //   "sideBarSectionHeader.border": "#1d2033",
+      //   "editorGroup.border": "#1d2033",
+      //   "editorGroup.focusedEmptyBorder": "#1d2033",
+      //   "panel.border": "#1d2033",
+      //   "panelTitle.border": "#1d2033",
+      //   "panelSection.border": "#1d2033",
+      //   "statusBar.border": "#1d2033",
+      //   "tab.border": "#1d2033",
+      //   "tab.activeBorder": "#1d2033",
+      //   "tab.unfocusedActiveBorder": "#1d2033",
+      //   "tab.activeBorderTop": "#1d2033",
+      //   "tab.unfocusedActiveBorderTop": "#1d2033",
+      //   "tab.lastPinnedBorder": "#1d2033",
+    },
     "[Ayu Mirage Zed]": {
       "editor.background": "#1A1A1A",
       "editorGutter.background": "#1A1A1A",

@@ -19,10 +19,44 @@
     "<C-k>": false,
   },
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "bfore": ["d"],
+      "after": ["\"", "_", "d"],
+    },
     // {
-    //   "before": ["<leader>", "s", "g"],
-    //   "commands": ["search.action.openEditor"],
+    //   "before": ["d", "d"],
+    //   "after": ["\"", "_", "d", "d"],
     // },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"],
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"],
+    },
+    {
+      "before": ["]", "g"],
+      "commands": ["workbench.action.editor.nextChange"],
+    },
+    {
+      "before": ["[", "g"],
+      "commands": ["workbench.action.editor.previousChange"],
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.nextInFiles"],
+      "silent": true,
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prevInFiles"],
+      "silent": true,
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"],
+    },
     {
       "before": ["<leader>", "s", "g"],
       "commands": [
@@ -32,13 +66,18 @@
         },
       ],
     },
+    // {
+    //   "before": ["<leader>", "a"],
+    //   "commands": ["vscode-harpoon.addEditor"],
+    // },
     {
       "before": ["<leader>", "a"],
-      "commands": ["vscode-harpoon.addEditor"],
+      "commands": ["code-telescope.harpoon.addFile"],
     },
     {
       "before": ["<leader>", "l"],
-      "commands": ["vscode-harpoon.editEditors"],
+      //   "commands": ["vscode-harpoon.editEditors"],
+      "commands": ["code-telescope.fuzzy.harpoon"],
     },
     // {
     //     "before": [
@@ -51,19 +90,20 @@
     // },
     {
       "before": ["<leader>", "n"],
-      "commands": ["vscode-harpoon.gotoEditor1"],
+      //   "commands": ["vscode-harpoon.gotoEditor1"],
+      "commands": ["code-telescope.harpoon.gotoFile1"],
     },
     {
       "before": ["<leader>", "e"],
-      "commands": ["vscode-harpoon.gotoEditor2"],
+      "commands": ["code-telescope.harpoon.gotoFile2"],
     },
     {
       "before": ["<leader>", "i"],
-      "commands": ["vscode-harpoon.gotoEditor3"],
+      "commands": ["code-telescope.harpoon.gotoFile3"],
     },
     {
       "before": ["<leader>", "o"],
-      "commands": ["vscode-harpoon.gotoEditor4"],
+      "commands": ["code-telescope.harpoon.gotoFile4"],
     },
     {
       "before": ["s"],
@@ -138,6 +178,35 @@
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
+      "efore": ["d"],
+      "after": ["\"", "_", "d"],
+    },
+    {
+      "before": ["x"],
+      "after": ["\"", "_", "x"],
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"],
+    },
+    {
+      "before": ["p"],
+      "after": ["\"", "_", "d", "P"],
+    },
+    {
+      "before": ["<leader>", "s", "g"],
+      "commands": [
+        {
+          "command": "periscope.search",
+          "when": "editorTextFocus",
+        },
+      ],
+    },
+    // {
+    //   "before": ["/"],
+    //   "commands": ["actions.find"],
+    // },
+    {
       "before": ["<space>"],
       "commands": ["vspacecode.space"],
     },
@@ -165,31 +234,33 @@
       "when": "editorTextFocus && !editorReadonly",
     },
   ],
-  "workbench.colorTheme": "Noir Poimandres Darker",
-  "workbench.colorCustomizations": {
-    "sideBar.border": "#c1c1c115",
-    "editor.compositionBorder": "#c1c1c115",
-    "panel.border": "#c1c1c115",
-    "editorGroup.border": "#c1c1c115", // Border between editor groups
-    //   "editorGroup.border": "#ff0000",
-    "[Vesper]": {
-      "sideBar.border": "#4d4d4d",
-      "editor.compositionBorder": "#4d4d4d",
-      "panel.border": "#4d4d4d", // Border for the panel (bottom area, often where chat appears)
-      "editorGroup.border": "#4d4d4d", // Border between editor groups
-      // "activityBar.border": "#4d4d4d"
-      "scrollbar.shadow": "#ffffff00",
-      "widget.shadow": "#ffffff00",
-      "statusBar.background": "#000000",
-    },
-    // "statusBar.background": "#000000",
-    "statusBar.background": "#000000",
-    // "statusBar.noFolderBackground": "#000000"
-  },
+  //   "workbench.colorTheme": "Vespertino Black",
+  //   "workbench.colorCustomizations": {
+  //     "sideBar.border": "#c1c1c115",
+  //     "editor.compositionBorder": "#c1c1c115",
+  //     "panel.border": "#c1c1c115",
+  //     "editorGroup.border": "#c1c1c115", // Border between editor groups
+  //     //   "editorGroup.border": "#ff0000",
+  //     "[Vesper]": {
+  //       "sideBar.border": "#4d4d4d",
+  //       "editor.compositionBorder": "#4d4d4d",
+  //       "panel.border": "#4d4d4d", // Border for the panel (bottom area, often where chat appears)
+  //       "editorGroup.border": "#4d4d4d", // Border between editor groups
+  //       // "activityBar.border": "#4d4d4d"
+  //       //   "scrollbar.shadow": "#ffffff00",
+  //       "widget.shadow": "#ffffff00",
+  //       "statusBar.background": "#000000",
+  //     },
+  //     // "statusBar.background": "#000000",
+  //     "statusBar.background": "#000000",
+  //     // "statusBar.noFolderBackground": "#000000"
+  //   },
   "workbench.editor.labelFormat": "long",
   "workbench.editor.editorActionsLocation": "hidden",
   "workbench.layoutControl.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "scm.diffDecorationsGutterVisibility": "always",
+  "scm.diffDecorations": "gutter",
+  //   "workbench.iconTheme": "material-icon-theme",
   //   "custom-ui-style.electron": {
   //     "frame": false,
   //     "titleBarStyle": "hiddenInset",
@@ -212,6 +283,9 @@
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tips.enabled": false,
   "workbench.startupEditor": "none",
+
+  "editor.lineDecorationsWidth": 20,
+  "editor.padding.top": 20,
   "editor.minimap.enabled": false,
   "editor.guides.indentation": false,
   "editor.renderWhitespace": "none",
@@ -221,7 +295,7 @@
   "editor.hover.enabled": "on",
   "editor.showFoldingControls": "never",
   "editor.scrollbar.horizontal": "hidden",
-  // "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.vertical": "hidden",
   "editor.overviewRulerBorder": false,
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -245,7 +319,6 @@
   "workbench.navigationControl.enabled": false,
   "window.commandCenter": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.sideBar.location": "right",
   "window.controlsStyle": "custom",
   "editor.occurrencesHighlight": "off", //removes highlight of the word hovered
   "workbench.editor.showTabs": "single",
@@ -262,9 +335,10 @@
   "custom-ui-style.preferRestart": true,
   "custom-ui-style.reloadWithoutPrompting": true,
   "custom-ui-style.external.imports": [
-    "file://C:/Users/Sven/AppData/Roaming/Code/User/test.css",
+    // "file://C:/Users/Sven/AppDota/Roaming/Code/User/test.css",
+    // "file://C:/Users/Sven/AppData/Roaming/Code/User/index.js",
+    // "file:///C:/Users/Sven/Documents/index.js",
   ],
-  "workbench.activityBar.location": "top",
   "workbench.panel.showLabels": false,
   "chat.commandCenter.enabled": false,
   "search.mode": "reuseEditor",
@@ -274,83 +348,180 @@
   "vscode_custom_css.imports": [
     "file:///C:/Users/Sven/Documents/custom.css",
     "file:///C:/Users/Sven/Documents/custom.js",
-    "file:///C:/Users/Sven/Documents/index.js",
+    // "file:///C:/Users/Sven/Documents/index.js",
   ],
   "[gdscript]": {
     "editor.defaultFormatter": "geequlim.godot-tools",
   },
-  "window.menuBarVisibility": "toggle",
   "editor.formatOnSave": true,
   "window.newWindowDimensions": "maximized",
   // "editor.full": true,
   // C:\Users\Sven\Documents\
-  "periscope.rgQueryParams": [
-    {
-      // filter the results to a folder
-      // Query: "redis -m module1"
-      // After: "rg 'redis' -g '**/*module1*/**'"
-      "regex": "^(.+) -m ([\\w-_]+)$",
-      "param": "-g '**/*$1*/**' -g '!**/node_modules/**'",
-    },
-    {
-      // filter the results to a folder and filetype
-      // Query: "redis -m module1 yaml"
-      // After: "rg 'redis' -g '**/*module1*/**/*.yaml'"
-      "regex": "^(.+) -m ([\\w-_]+) ([\\w]+)$",
-      "param": "-g '**/*$1*/**/*.$2'",
-    },
-    {
-      // filter the results that match a glob
-      // Query: "redis -g *module"
-      // After: "rg 'redis' -g '*module'"
-      "regex": "^(.+) -g (.+)$",
-      "param": "-g '$1'",
-    },
-    {
-      // filter the results to rg filetypes
-      // Query: "redis -t yaml"
-      // After: "rg 'redis' -t yaml"
-      "regex": "^(.+) -t ?(\\w+)$",
-      "param": "-t $2",
-    },
-    {
-      // filter the results to Godot script files (.gd) when query is just "*.gd"
-      // Query: "*.gd"
-      // After: "rg '' -g '**/*.gd'"
-      "regex": "^\\s*\\*\\.gd\\s*$",
-      "param": "-g '**/*.gd'",
-    },
-    {
-      // filter the results to Godot script files (.gd) when query is "<term> *.gd"
-      // Query: "redis *.gd"
-      // After: "rg 'redis' -g '**/*.gd'"
-      "regex": "^(.+?)\\s+\\*\\.gd\\s*$",
-      "param": "-g '**/*.gd'",
-    },
-    {
-      // filter the results that match a file extension through a glob
-      // Query: redis *.rs => rg 'redis' -g '*.rs'
-      "regex": "^(.+?)\\s+\\*\\.(\\w+)\\s*$",
-      "param": "-g '*.$2'",
-    },
-  ],
+  //   "periscope.rgQueryParams": [
+  //     {
+  //       // filter the results to a folder
+  //       // Query: "redis -m module1"
+  //       // After: "rg 'redis' -g '**/*module1*/**'"
+  //       "regex": "^(.+) -m ([\\w-_]+)$",
+  //       "param": "-g '**/*$1*/**' -g '!**/node_modules/**'",
+  //     },
+  //     {
+  //       // filter the results to a folder and filetype
+  //       // Query: "redis -m module1 yaml"
+  //       // After: "rg 'redis' -g '**/*module1*/**/*.yaml'"
+  //       "regex": "^(.+) -m ([\\w-_]+) ([\\w]+)$",
+  //       "param": "-g '**/*$1*/**/*.$2'",
+  //     },
+  //     {
+  //       // filter the results that match a glob
+  //       // Query: "redis -g *module"
+  //       // After: "rg 'redis' -g '*module'"
+  //       "regex": "^(.+) -g (.+)$",
+  //       "param": "-g '$1'",
+  //     },
+  //     {
+  //       // filter the results to rg filetypes
+  //       // Query: "redis -t yaml"
+  //       // After: "rg 'redis' -t yaml"
+  //       "regex": "^(.+) -t ?(\\w+)$",
+  //       "param": "-t $2",
+  //     },
+  //     {
+  //       // filter the results to Godot script files (.gd) when query is just "*.gd"
+  //       // Query: "*.gd"
+  //       // After: "rg '' -g '**/*.gd'"
+  //       "regex": "^\\s*\\*\\.gd\\s*$",
+  //       "param": "-g '**/*.gd'",
+  //     },
+  //     {
+  //       // filter the results to Godot script files (.gd) when query is "<term> *.gd"
+  //       // Query: "redis *.gd"
+  //       // After: "rg 'redis' -g '**/*.gd'"
+  //       "regex": "^(.+?)\\s+\\*\\.gd\\s*$",
+  //       "param": "-g '**/*.gd'",
+  //     },
+  //     {
+  //       // filter the results that match a file extension through a glob
+  //       // Query: redis *.rs => rg 'redis' -g '*.rs'
+  //       "regex": "^(.+?)\\s+\\*\\.(\\w+)\\s*$",
+  //       "param": "-g '*.$2'",
+  //     },
+  //   ],
   // always exclude Godot scene files from search results unless explicitly asked for
-  "periscope.rgGlobExcludes": ["**/*.tscn"],
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    "asvetliakov.vscode-neovim": 1,
-  },
-
-    // always exclude Godot scene files from search results unless explicitly asked for
-  "periscope.rgGlobExcludes": ["**/*.tscn"],
+  "periscope.rgGlobExcludes": [
+    "**/*.tscn",
+    "**/*.tmp",
+    "**/*.uid",
+    "**/*.godot",
+    "**/*.*.import",
+    "**/*.svg",
+  ],
   "extensions.experimental.affinity": {
     "vscodevim.vim": 1,
     "asvetliakov.vscode-neovim": 1,
   },
   "vim.cursorStylePerMode.insert": "line",
   "vim.cursorStylePerMode.normal": "block",
-  "vim.cursorStylePerMode.replace": "block-outline",
-  "vim.cursorStylePerMode.visual": "block-outline",
-  "vim.cursorStylePerMode.visualblock": "block-outline",
-  "vim.cursorStylePerMode.visualline": "block-outline",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "godotTools.inlayHints.gdscript": true,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
+  // "prettier.useTabs": true,
+  // "editor.insertSpaces": false,
+  "workbench.iconTheme": "ayu-mirage-zed",
+  "workbench.productIconTheme": "icons-carbon",
+  //   "editor.cursorStyle": "line",
+  //   "editor.cursorBlinking": "smooth",
+  // --- Typography ---
+  "editor.fontFamily": "'JetBrains Mono NL','JetBrains Mono', 'Zed Mono', monospace",
+  //   "editor.lineHeight": 2,
+  "editor.fontWeight": "400",
+  "editor.letterSpacing": 0.5,
+  //   "editor.fontLigatures": true,
+
+  // --- UI Minimalism ---
+  //   "editor.hideCursorInOverviewRuler": true,
+  //   "editor.occurrenceHighlight": "off",
+  //   "editor.occurrenceHighlight": "true",
+  //   "editor.selectionHighlight": false,
+  "editor.bracketPairColorization.enabled": true,
+
+  // --- Breadcrumbs (The file path bar) ---
+  //   "breadcrumbs.icons": false,
+  //   "breadcrumbs.symbolPath": "off",
+
+  // --- Tab & Navigation ---
+  //   "workbench.editor.tabSizing": "shrink",
+  //   "workbench.editor.showIcons": false,
+  //   "workbench.editor.navigationControl": true,
+
+  // --- Editor Behavior ---
+  "editor.lineNumbers": "on",
+  //   wpf
+  //   "editor.glyphMargin": false,
+  // "editor.folding": false,
+  "workbench.tree.indent": 16,
+  "windowColors.askToColorizeRepoWhenOpened": false,
+  //   "window.customTitleBarVisibility": "auto",
+  "workbench.colorTheme": "Noir Poimandres Darker",
+
+  // --- COLOR CUSTOMIZATIONS ---
+  "workbench.colorCustomizations": {
+    "[Noir Poimandres Darker]": {
+      //   "editorCursor.foreground": "#A052FF",
+      "editorGroupHeader.border": "#1d2033",
+      "window.activeBorder": "#1d2033",
+      "contrastBorder": "#1d2033",
+      "titleBar.border": "#1d2033",
+      "terminal.border": "#1d2033",
+      "panel.border": "#1d2033",
+    },
+    "[Ayu Mirage Zed]": {
+      "editor.background": "#1A1A1A",
+      "editorGutter.background": "#1A1A1A",
+      "breadcrumb.background": "#1A1A1A",
+      "breadcrumb.foreground": "#666666",
+      "breadcrumb.focusForeground": "#999999",
+      "breadcrumb.activeSelectionForeground": "#AAAAAA",
+      "sideBar.background": "#141414",
+      "sideBar.border": "#141414",
+      "activityBar.background": "#141414",
+      "activityBar.border": "#141414",
+      "editorGroupHeader.tabsBackground": "#141414",
+      "editorGroupHeader.tabsBorder": "#141414",
+      "tab.activeBackground": "#141414",
+      "tab.inactiveBackground": "#141414",
+      "tab.border": "#141414",
+      "terminal.background": "#141414",
+      "panel.background": "#141414",
+      "panel.border": "#141414",
+      "statusBar.background": "#141414",
+      "statusBar.border": "#141414",
+      "focusBorder": "#00000000",
+      "input.border": "#00000000",
+      "input.background": "#252525",
+      "quickInput.background": "#141414",
+      "quickInput.foreground": "#CCCCCC",
+      "quickInputList.focusBackground": "#2d2d2d",
+      "quickInputTitle.background": "#141414",
+      "pickerGroup.foreground": "#575757",
+      "widget.border": "#333333",
+      "widget.shadow": "#000000aa",
+    },
+    // "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff",
+  },
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.sideBar.location": "right",
 }

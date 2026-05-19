@@ -352,5 +352,7 @@
     "workbench.activityBar.location": "default",
     "workbench.panel.showLabels": false,
     "chat.commandCenter.enabled": false,
-    "window.menuBarVisibility": "compact"
+    "window.menuBarVisibility": "compact",
+      "editor.hideCursorInOverviewRuler": true,
+  "editor.autoClosingBrackets": "never",
 }

@@ -101,5 +101,25 @@
   {
     "key": "ctrl+n",
     "command": "workbench.action.togglePanel"
-  }
+  },
+    {
+    "key": "n",
+    "command": "search.action.focusNextSearchResult",
+    "when": "inSearchEditor",
+  },
+  {
+    "key": "shift+n",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "inSearchEditor",
+  },
+  {
+    "key": "enter",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible",
+  },
+  {
+    "key": "g d",
+    "command": "editor.action.goToDeclaration",
+    "when": "inSearchEditor",
+  },
 ]
